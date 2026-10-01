@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="هنرستان شهید فخری‌زاده بندرعباس، روستای تازیاتین">
+  <title>هنرستان شهید فخری‌زاده | بندرعباس</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+      background: #f5f8fb;
+      color: #132238;
+      line-height: 1.9;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 25, 42, .96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 5px 25px rgba(0,0,0,.15);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 800;
+    }
+    .brand-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg,#f59e0b,#ef4444);
+      font-size: 23px;
+    }
+    .brand small {
+      display: block;
+      color: #a9c0d4;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    nav { display: flex; gap: 7px; flex-wrap: wrap; }
+    nav a {
+      color: #dbe8f3;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: .2s;
+    }
+    nav a:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(245,158,11,.25), transparent 25%),
+        radial-gradient(circle at 15% 80%, rgba(14,165,233,.22), transparent 30%),
+        linear-gradient(135deg,#07192a 0%,#0c3045 55%,#0b6170 100%);
+      color: white;
+      padding: 90px 0 100px;
+    }
+    .hero:before, .hero:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+    }
+    .hero:before { width: 430px; height: 430px; left: -180px; top: -180px; }
+    .hero:after { width: 330px; height: 330px; right: -120px; bottom: -150px; }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 55px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 7px 15px;
+      border-radius: 30px;
+      color: #ffd166;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.25;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: #ffd166; }
+    .hero p {
+      color: #d6e4ef;
+      font-size: 17px;
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 21px;
+      border-radius: 13px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s;
+    }
+    .btn-primary {
+      background: #f59e0b;
+      color: #17202a;
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: #fbbf24; }
+    .btn-light {
+      border-color: rgba(255,255,255,.25);
+      color: white;
+      background: rgba(255,255,255,.07);
+    }
+    .btn-light:hover { background: rgba(255,255,255,.13); }
+
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.2);
+    }
+    .hero-card .big-icon { font-size: 64px; margin-bottom: 12px; }
+    .hero-card h3 { font-size: 22px; margin-bottom: 8px; }
+    .hero-card p { font-size: 14px; margin: 0; color: #c9d9e5; }
+
+    section { padding: 78px 0; }
+    .section-head { text-align: center; margin-bottom: 42px; }
+    .section-head .tag {
+      color: #0b7c83;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .section-head h2 {
+      font-size: clamp(26px,4vw,40px);
+      margin: 8px 0 10px;
+      color: #102238;
+    }
+    .section-head p { color: #607286; max-width: 700px; margin: auto; }
+
+    .about {
+      background: white;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .info-box {
+      background: #f7fafc;
+      border: 1px solid #e5edf4;
+      border-radius: 22px;
+      padding: 28px;
+    }
+    .info-box h3 { margin-bottom: 10px; color: #0c6170; }
+    .info-box p { color: #5d6e80; }
+
+    .fields {
+      background: #f5f8fb;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e5edf4;
+      border-radius: 24px;
+      padding: 30px;
+      transition: .25s;
+      box-shadow: 0 10px 30px rgba(22,45,65,.05);
+    }
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 45px rgba(22,45,65,.12);
+    }
+    .card-icon {
+      width: 62px; height: 62px;
+      border-radius: 17px;
+      display: grid; place-items: center;
+      font-size: 30px;
+      background: #e8f7f5;
+      margin-bottom: 18px;
+    }
+    .card:nth-child(2) .card-icon { background: #fff3dd; }
+    .card:nth-child(3) .card-icon { background: #eaf1ff; }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p { color: #68798b; font-size: 14px; }
+
+    .staff {
+      background: white;
+    }
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 22px;
+      max-width: 850px;
+      margin: auto;
+    }
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 25px;
+      border: 1px solid #e5edf4;
+      border-radius: 22px;
+      background: #fbfdff;
+    }
+    .avatar {
+      flex: 0 0 68px;
+      width: 68px; height: 68px;
+      border-radius: 20px;
+      display: grid; place-items: center;
+      color: white;
+      font-size: 28px;
+      background: linear-gradient(135deg,#0b6170,#0ea5a5);
+    }
+    .person h3 { font-size: 18px; }
+    .person p { color: #718096; font-size: 13px; }
+
+    .contact {
+      background: linear-gradient(135deg,#07192a,#0c4d5b);
+      color: white;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+    .contact .section-head { text-align: right; margin-bottom: 20px; }
+    .contact .section-head h2 { color: white; }
+    .contact .section-head p { color: #c5d7e2; margin: 0; }
+    .address {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      padding: 28px;
+    }
+    .address-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 18px 0;
+    }
+    .address-row strong { display: block; margin-bottom: 2px; }
+    .address-row span { color: #c6d7e1; font-size: 14px; }
+
+    footer {
+      background: #04121f;
+      color: #9db2c3;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 13px;
+    }
+    footer strong { color: white; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .staff-grid { grid-template-columns: 1fr; }
+      .hero { padding: 65px 0 75px; }
+      nav { display: none; }
+    }
+    @media (max-width: 520px) {
+      h1 { font-size: 34px; }
+      section { padding: 58px 0; }
+      .person { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">
+      <div class="brand-icon">🏫</div>
+      <div>
+        هنرستان شهید فخری‌زاده
+        <small>بندرعباس | روستای تازیاتین</small>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#about">معرفی</a>
+      <a href="#fields">رشته‌ها</a>
+      <a href="#staff">کادر هنرستان</a>
+      <a href="#contact">تماس و آدرس</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">هنرستان فنی و مهارتی</div>
+        <h1>مهارت امروز،<br><span>آینده‌ای حرفه‌ای</span></h1>
+        <p>
+          هنرستان شهید فخری‌زاده با تمرکز بر آموزش‌های تخصصی و مهارتی،
+          زمینه رشد استعدادها و کسب مهارت‌های کاربردی را برای هنرجویان فراهم می‌کند.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#fields">مشاهده رشته‌ها</a>
+          <a class="btn btn-light" href="#contact">اطلاعات هنرستان</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="big-icon">⚙️</div>
+        <h3>آموزش تخصصی و مهارت‌محور</h3>
+        <p>
+          یادگیری در محیطی پویا با تمرکز بر دانش فنی، مهارت عملی،
+          مسئولیت‌پذیری و آمادگی برای آینده تحصیلی و شغلی.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">درباره هنرستان</div>
+        <h2>هنرستان شهید فخری‌زاده</h2>
+        <p>محیطی برای یادگیری، تجربه کردن و ساختن آینده‌ای مبتنی بر مهارت.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="info-box">
+          <h3>🎯 رویکرد آموزشی</h3>
+          <p>
+            در هنرستان تلاش می‌شود آموزش‌های نظری در کنار تجربه‌های عملی و
+            مهارت‌های تخصصی قرار گیرد تا هنرجویان برای ادامه تحصیل و ورود به
+            عرصه‌های فنی و حرفه‌ای آمادگی بیشتری پیدا کنند.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>🌱 رشد و پرورش هنرجویان</h3>
+          <p>
+            توجه به مسئولیت‌پذیری، خلاقیت، کار گروهی، اخلاق حرفه‌ای و رشد
+            توانمندی‌های فردی از محورهای مهم فعالیت‌های آموزشی و پرورشی هنرستان است.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fields" class="fields">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">رشته‌های هنرستان</div>
+        <h2>مسیر تخصصی خودت را انتخاب کن</h2>
+        <p>سه حوزه فنی و مهارتی برای یادگیری تخصص‌های کاربردی.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h3>برق صنعتی</h3>
+          <p>
+            آشنایی با مدارهای الکتریکی، تجهیزات و تابلوهای برق صنعتی،
+            اصول کار با سیستم‌های الکتریکی و مهارت‌های کاربردی این حوزه.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔧</div>
+          <h3>مکانیک خودرو</h3>
+          <p>
+            آشنایی با ساختار و عملکرد خودرو، سیستم‌های مکانیکی،
+            تعمیر و نگهداری و مهارت‌های پایه عیب‌یابی خودرو.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔥</div>
+          <h3>صنایع جوش</h3>
+          <p>
+            آموزش مبانی و مهارت‌های جوشکاری، شناخت تجهیزات و رعایت
+            اصول ایمنی و اجرای عملیات جوش در محیط‌های کارگاهی.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="staff" class="staff">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">کادر هنرستان</div>
+        <h2>مدیریت و امور پرورشی</h2>
+      </div>
+
+      <div class="staff-grid">
+        <div class="person">
+          <div class="avatar">👤</div>
+          <div>
+            <p>مدیریت هنرستان</p>
+            <h3>سید عبدالجلیل کاظمی اصل</h3>
+          </div>
+        </div>
+
+        <div class="person">
+          <div class="avatar">🌱</div>
+          <div>
+            <p>مربی پرورشی</p>
+            <h3>فرهاد محمدی</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-head">
+          <div class="tag">اطلاعات تماس</div>
+          <h2>راه‌های دسترسی به هنرستان</h2>
+          <p>
+            برای مراجعه حضوری و دریافت اطلاعات بیشتر می‌توانید به نشانی هنرستان مراجعه کنید.
+          </p>
+        </div>
+      </div>
+
+      <div class="address">
+        <div class="address-row">
+          <div>📍</div>
+          <div>
+            <strong>نشانی</strong>
+            <span>بندرعباس، روستای تازیاتین</span>
+          </div>
+        </div>
+
+        <div class="address-row">
+          <div>🏫</div>
+          <div>
+            <strong>نام هنرستان</strong>
+            <span>هنرستان شهید فخری‌زاده</span>
+          </div>
+        </div>
+
+        <div class="address-row">
+          <div>🎓</div>
+          <div>
+            <strong>رشته‌ها</strong>
+            <span>برق صنعتی، مکانیک خودرو، صنایع جوش</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>هنرستان شهید فخری‌زاده</strong>
+    <br>
+    بندرعباس، روستای تازیاتین
+    <br>
+    © تمامی حقوق این صفحه محفوظ است.
+  </div>
+</footer>
+
+</body>
+</html>
